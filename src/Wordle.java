@@ -1,5 +1,3 @@
 public class Wordle {
-    public static void main(String[] args) {
-        System.out.println("Boom");
-    }
+    String a [][] = new String[6][5];
 }
