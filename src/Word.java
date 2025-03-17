@@ -3,4 +3,8 @@ public class Word extends Wordle {
     public Word () {
         correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
     }
+
+    public String getCorrectWord() {
+        return correctWord;
+    }
 }
