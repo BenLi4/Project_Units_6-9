@@ -1,12 +1,10 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 import java.io.File;
 import java.io.*;
 public class Wordle {
-    ArrayList<String> a;
-    String[][] board;
+    private ArrayList<String> a;
+    private String[][] board;
 
     public Wordle() {
         board = new String[6][5];
@@ -31,5 +29,9 @@ public class Wordle {
         for (int i = 0; i < 5; i++) {
             board[row][i] = word.substring(i, i + 1);
         }
+    }
+
+    public String[][] getBoard() {
+        return board;
     }
 }
