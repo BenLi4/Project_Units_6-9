@@ -34,4 +34,17 @@ public class Wordle {
     public String[][] getBoard() {
         return board;
     }
+
+    public void printBoard(){
+        int i = 0;
+        int b = 0;
+        while(board[i][0] != null) {
+            System.out.println(board[i][b]);
+            if (b >= 5){
+                b=0;
+                i++;
+        }
+       else b++;
+        }
+    }
 }

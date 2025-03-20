@@ -18,7 +18,6 @@ public class GuessWord extends Word {
                     b += RED + a.charAt(i);
                 }
             }
-        a = b;
         return false;
     }
 
@@ -26,7 +25,7 @@ public class GuessWord extends Word {
         if (guess.length() > 5) {
             return false;
         } else {
-            if (!getWordList().contains(guess)) {
+            if (!getWordList().contains(guess.toLowerCase())) {
                 return false;
             }
         }
