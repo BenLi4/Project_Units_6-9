@@ -1,17 +1,16 @@
 public class Word extends Wordle {
-    private String correctWord;
+    private String correctWord = correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
     public Word () {
-        correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
     }
 
     public String getCorrectWord() {
         return correctWord;
     }
 
-    public boolean check(String a) {
-        if (a.equals(correctWord)) {
-            return true;
+    public String check(String a) {
+        if (a.equals(correctWord.toLowerCase())) {
+            return "t";
         }
-        return false;
+        return "f";
     }
 }

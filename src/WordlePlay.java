@@ -6,9 +6,6 @@ public class WordlePlay {
     Boolean win = false;
 
     public WordlePlay() {
-        //board print
-        Wordle l = new Wordle();
-        l.printBoard();
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Wordle!");
         System.out.print("What's your name?");
@@ -16,26 +13,32 @@ public class WordlePlay {
         System.out.println("Hello " + t);
         int i = 0;
         String o = "";
-        while (i < 5 && !o.equals(a.getCorrectWord()) && !win) {
+        while (!win) {
+            System.out.println(a.getCorrectWord());
             System.out.print("Enter a word(Should be 5 letters): ");
             o = scan.nextLine();
             if (b.validGuess(o)) {
-                c.addToBoard(o, i);
-                if (a.check(o)) {
+                if (a.check(o).equals("t")) {
+                    o = b.check(o);
+                    c.addToBoard(o, i);
+                    c.printBoard();
                     System.out.println("You Got It!");
+                    win = true;
                 } else {
+                    o = b.check(o);
+                    c.addToBoard(o, i);
+                    c.printBoard();
                 }
                 i++;
             } else {
                 System.out.println("invalid");
             }
-
-        }
-        if (win) {
-            System.out.println("Play again?(y/n)");
-            String c = scan.nextLine();
-            if (c.equals("y")) {
-                win = false;
+            if (win) {
+                System.out.println("Play again?(y/n)");
+                String c = scan.nextLine();
+                if (c.equals("y")) {
+                    win = false;
+                }
             }
         }
     }

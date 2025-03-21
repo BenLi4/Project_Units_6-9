@@ -1,24 +1,25 @@
 public class GuessWord extends Word {
-    public static final String GREEN = "\033[0;32m";   // GREEN
-    public static final String YELLOW = "\033[0;33m";  // YELLOW
-    public static final String RED = "\033[0;31m";     // RED   // WHITE
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String RED = "\u001B[31m";
+    public static final String WHITE = "\u001B[37m";
 
     public GuessWord() {
     }
 
     @Override
-    public boolean check(String a) {
+    public String check(String a) {
         String b = "";
             for (int i = 0; i < 5; i++) {
-                if (a.substring(i, i + 1).equals(getCorrectWord().substring(i, i + 1))) {
-                    b += GREEN + a.charAt(i);
-                } else if (getCorrectWord().contains(a.substring(i, i + 1))) {
-                    b += YELLOW + a.charAt(i);
+                if (a.substring(i, i + 1).toLowerCase().equals(getCorrectWord().substring(i, i + 1))) {
+                    b += GREEN + a.substring(i, i + 1) + WHITE;
+                } else if (getCorrectWord().contains(a.substring(i, i + 1).toLowerCase())) {
+                    b += YELLOW + a.substring(i, i + 1) + WHITE;
                 } else {
-                    b += RED + a.charAt(i);
+                    b += RED + a.substring(i, i + 1) + WHITE;
                 }
             }
-        return false;
+        return b;
     }
 
     public boolean validGuess(String guess) {

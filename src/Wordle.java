@@ -19,6 +19,11 @@ public class Wordle {
         } catch (IOException exception) {
             System.out.println(exception.getMessage());
         }
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                board[i][j] = "_";
+            }
+        }
     }
 
     public ArrayList<String> getWordList() {
@@ -26,8 +31,10 @@ public class Wordle {
     }
 
     public void addToBoard(String word, int row) {
-        for (int i = 0; i < 5; i++) {
-            board[row][i] = word.substring(i, i + 1);
+        int a  = 0;
+        for (int i = 0; i < 55; i+= 11) {
+            board[row][a] = word.substring(i, i + 11);
+            a++;
         }
     }
 
@@ -36,15 +43,11 @@ public class Wordle {
     }
 
     public void printBoard(){
-        int i = 0;
-        int b = 0;
-        while(board[i][0] != null) {
-            System.out.println(board[i][b]);
-            if (b >= 5){
-                b=0;
-                i++;
-        }
-       else b++;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
