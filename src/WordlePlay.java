@@ -15,6 +15,7 @@ public class WordlePlay {
         String o = "";
         while (!win) {
             System.out.println(a.getCorrectWord());
+            System.out.println(b.getCorrectWord());
             System.out.print("Enter a word(Should be 5 letters): ");
             o = scan.nextLine();
             if (b.validGuess(o)) {
@@ -33,13 +34,26 @@ public class WordlePlay {
             } else {
                 System.out.println("invalid");
             }
+            if (i > 5) {
+                System.out.print("You lost. Play again?(y/n)");
+                String rut = scan.nextLine();
+                if (rut.equals("y")) {
+                    c.resetBoard();
+                    i = 0;
+                    b.generateNewCorrectWord();
+                }
+            }
             if (win) {
-                System.out.println("Play again?(y/n)");
-                String c = scan.nextLine();
-                if (c.equals("y")) {
+                System.out.print("Play again?(y/n)");
+                String d = scan.nextLine();
+                if (d.equals("y")) {
                     win = false;
+                    c.resetBoard();
+                    i = 0;
+                    b.generateNewCorrectWord();
                 }
             }
         }
+        System.out.println("See ya!");
     }
 }

@@ -50,4 +50,12 @@ public class Wordle {
             System.out.println();
         }
     }
+
+    public void resetBoard() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                board[i][j] = "_";
+            }
+        }
+    }
 }

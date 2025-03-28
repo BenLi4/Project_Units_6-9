@@ -1,6 +1,7 @@
 public class Word extends Wordle {
-    private String correctWord = correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
+    private String correctWord;
     public Word () {
+        correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
     }
 
     public String getCorrectWord() {
@@ -12,5 +13,9 @@ public class Word extends Wordle {
             return "t";
         }
         return "f";
+    }
+
+    public void generateNewCorrectWord() {
+        correctWord = getWordList().get((int) (Math.random() * getWordList().size()));
     }
 }
