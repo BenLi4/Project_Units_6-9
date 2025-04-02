@@ -8,11 +8,11 @@ public class Word extends Wordle {
         return correctWord;
     }
 
-    public String check(String a) {
+    public Boolean check(String a) {
         if (a.equals(correctWord.toLowerCase())) {
-            return "t";
+            return true;
         }
-        return "f";
+        return false;
     }
 
     public void generateNewCorrectWord() {

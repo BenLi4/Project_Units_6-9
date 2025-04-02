@@ -7,8 +7,7 @@ public class GuessWord extends Word {
     public GuessWord() {
     }
 
-    @Override
-    public String check(String a) {
+    public String checks(String a) {
         String b = "";
             for (int i = 0; i < 5; i++) {
                 if (a.substring(i, i + 1).toLowerCase().equals(getCorrectWord().substring(i, i + 1))) {
@@ -20,6 +19,11 @@ public class GuessWord extends Word {
                 }
             }
         return b;
+    }
+
+    @Override
+    public String getCorrectWord() {
+        return super.getCorrectWord();
     }
 
     public boolean validGuess(String guess) {

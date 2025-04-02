@@ -42,18 +42,57 @@ public class Wordle {
         return board;
     }
 
-    public void printBoard(){
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                System.out.print(board[i][j] + " ");
+    public void printBoard(String diff){
+        if (diff.equals("n")) {
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 5; j++) {
+                    System.out.print(board[i][j] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
+        } else if (diff.equals("e")) {
+            for (int i = 0; i < 7; i++) {
+                for (int j = 0; j < 5; j++) {
+                    System.out.print(board[i][j] + " ");
+                }
+                System.out.println();
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    System.out.print(board[i][j] + " ");
+                }
+                System.out.println();
+            }
         }
     }
 
-    public void resetBoard() {
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
+    public void resetBoard(String diff) {
+        if (diff.equals("n")) {
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 5; j++) {
+                    board[i][j] = "_";
+                }
+            }
+        } else if (diff.equals("e")) {
+            for (int i = 0; i < 7; i++) {
+                for (int j = 0; j < 5; j++) {
+                    board[i][j] = "_";
+                }
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    board[i][j] = "_";
+                }
+            }
+        }
+    }
+
+    public void setBoardSize(int a, int b) {
+        board = new String[a][b];
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
                 board[i][j] = "_";
             }
         }
