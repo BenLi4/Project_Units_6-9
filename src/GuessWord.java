@@ -11,11 +11,11 @@ public class GuessWord extends Word {
         String b = "";
             for (int i = 0; i < 5; i++) {
                 if (a.substring(i, i + 1).toLowerCase().equals(getCorrectWord().substring(i, i + 1))) {
-                    b += GREEN + a.charAt(i) + WHITE;
+                    b += GREEN + a.substring(i, i + 1).toUpperCase() + WHITE;
                 } else if (getCorrectWord().contains(a.substring(i, i + 1).toLowerCase())) {
-                    b += YELLOW + a.charAt(i) + WHITE;
+                    b += YELLOW + a.substring(i, i + 1).toUpperCase() + WHITE;
                 } else {
-                    b += RED + a.charAt(i) + WHITE;
+                    b += RED + a.substring(i, i + 1).toUpperCase() + WHITE;
                 }
             }
         return b;
