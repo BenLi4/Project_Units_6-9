@@ -52,7 +52,7 @@ public class WordlePlay {
                     System.out.println("invalid");
                 }
                 if (i > 5) {
-                    System.out.print("You " + RED + "lost." + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
+                    System.out.print("You " + RED + "lost," + WHITE + " the correct word was " + GREEN + b.getCorrectWord() + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
                     String rut = scan.nextLine();
                     if (rut.equals("y")) {
                         l.get(2).resetBoard(difficulty);
@@ -101,7 +101,7 @@ public class WordlePlay {
                     System.out.println("invalid");
                 }
                 if (i > 6 && !win) {
-                    System.out.print("You " + RED + "lost." + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
+                    System.out.print("You " + RED + "lost," + WHITE + " the correct word was " + GREEN + b.getCorrectWord() + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
                     String rut = scan.nextLine();
                     if (rut.equals("y")) {
                         l.get(2).resetBoard(difficulty);
@@ -150,7 +150,7 @@ public class WordlePlay {
                     System.out.println("invalid");
                 }
                 if (i > 4 && !win) {
-                    System.out.print("You " + RED + "lost." + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
+                    System.out.print("You " + RED + "lost," + WHITE + " the correct word was " + GREEN + b.getCorrectWord() + WHITE + " Play again?(" + GREEN + "y" + WHITE + "/" + RED + "n" + WHITE + ")");
                     String rut = scan.nextLine();
                     if (rut.equals("y")) {
                         l.get(2).resetBoard(difficulty);
